@@ -38,12 +38,29 @@ char *cstrcat(char *dest, char *src){
 }
 
 char *cstrchr(char *str, int c){
+    
     while(*str != '\0'){
         if(*str == c){
             return str;
         }
         str++;
     }
+    if(c == '\0'){
+        return str;
+    }
 
     return NULL;
+}
+
+int cstrcmp(char *s1, char *s2){
+    while(*s1 != '\0' && *s2 != '\0'){
+        if(*s1 != *s2){
+            //return s1-s2 subs memory addys
+            return *s1-*s2;
+        }
+        s1++;
+        s2++;
+    }
+    return *s1-*s2;
+
 }

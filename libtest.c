@@ -8,9 +8,16 @@ int main(void){
 	char dest[100];
 	char src[] ="This is another test string";
 
-	//char c = 'i';
 	char c = '\0';
 	char *result;
+
+	int intResult;
+	//char s1[] = "This is a cat";
+	//char s2[] = "This is a dog";
+	char s1[] = "This is a dog";
+	char s2[] = "This is a cat";
+	//char s1[] = "This is a cat";
+	//char s2[] = "This is a cat";
 
 	//len of null terminated str
 	len=cstrlen(str);
@@ -29,7 +36,12 @@ int main(void){
 	//returns a char location within str
 	result = cstrchr(str,c);
 	printf("Found: %c\n", *result);
-	//return first i - segmentation fault for '\0' change code
+	//return first i - '\0' currently
+
+	//less than, zero = match, greater than 
+	intResult = cstrcmp(s1, s2);
+	printf("Integer Results: %d\n", intResult);
+	
 
 	return 0;
 }
